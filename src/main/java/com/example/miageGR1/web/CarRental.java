@@ -18,6 +18,7 @@ public class CarRental {
         cars.add(new Car("33CCDD", 3000));
         cars.add(new Car("22BB33", 2000));
         cars.add(new Car("33DD44", 3000));
+        cars.add(new Car("44EE55", 5000));
     }
 
     @GetMapping("/cars")
