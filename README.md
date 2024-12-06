@@ -53,7 +53,8 @@ Deploy a container:
 ```
 kubectl apply -f deployment.yml  
 ```
-See : 
+See: https://github.com/charroux/miageGR1/blob/main/deployment.yml
+
 
 Check if everything is running: 
 ```
