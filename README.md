@@ -39,3 +39,28 @@ git branch -D newcarservice
 ```
 git push origin --delete newcarservice
 ```
+
+## Kubernetes
+
+See https://github.com/charroux/kubernetes-minikube for more details
+
+Start minikube:
+```
+minikube start --driver=docker
+```
+
+Deploy a container:
+```
+kubectl apply -f deployment.yml  
+```
+See : 
+
+Check if everything is running: 
+```
+kubectl get pods  
+```
+Access from a Web browser:
+```
+minikube service miagegr1 --url
+```
+In a Web browser: address/cars

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miagegr1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: miagegr1
+  template:
+    metadata:
+      labels:
+        app: miagegr1
+    spec:
+      containers:
+        - image: efrei/myservice:1
+          imagePullPolicy: IfNotPresent
+          name: miagegr1
+      restartPolicy: Always
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: miagegr1
+  name: miagegr1
+spec:
+  ports:
+    - nodePort: 30945
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: miagegr1
+  type: LoadBalancer
