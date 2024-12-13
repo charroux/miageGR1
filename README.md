@@ -147,6 +147,22 @@ Test in your Web browser:
 http://localhost:31380/miagegr2/cars
 ```
 
+## Service mesh above Istio
+
+Launch the Kiali Dashboard:
+```
+kubectl -n istio-system port-forward deployment/kiali 20001:20001
+```
+
+Launch the console: http://localhost:20001/
+
+Graphana:
+```
+kubectl -n istio-system port-forward deployment/grafana 3000:3000
+```
+
+http://localhost:3000/
+
 ## Launch a workflow when the code is updated
 
 Create a new branch:
